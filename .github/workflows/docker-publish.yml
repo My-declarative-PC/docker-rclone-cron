@@ -1,12 +1,10 @@
 name: Build and Publish Docker Image
-
 on:
   push:
     branches:
       - master
-
     schedule:
-       - cron: '0 0 1 * *'
+      - cron: 0 0 1 * *
 
 jobs:
   build-and-push:
@@ -41,4 +39,3 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-
